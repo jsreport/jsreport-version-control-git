@@ -1,0 +1,44 @@
+{
+  "name": "jsreport-version-control-git",
+  "version": "0.1.0",
+  "description": "jsreport entities versioning implemented using local git repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "set DEBUG=jsreport&&mocha test&&standard"
+  },
+  "keywords": [
+    "jsreport",
+    "pdf"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "homepage": "https://github.com/jsreport/jsreport-version-control-git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jsreport/jsreport-version-control-git.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "devDependencies": {
+    "jsreport-assets": "0.6.8",
+    "jsreport-core": "1.5.1",
+    "jsreport-data": "1.1.2",
+    "jsreport-fs-store": "1.2.4",
+    "jsreport-phantom-pdf": "1.4.6",
+    "jsreport-templates": "1.2.2",
+    "mocha": "4.0.1",
+    "rimraf": "2.6.2",
+    "should": "13.1.3",
+    "standard": "10.0.3"
+  },
+  "dependencies": {
+    "jsreport-version-control": "github:jsreport/jsreport-version-control",
+    "nodegit": "0.20.3"
+  },
+  "files": [
+    "lib",
+    "index.js",
+    "jsreport.config.js"
+  ]
+}
