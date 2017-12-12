@@ -18,8 +18,14 @@
     "type": "git",
     "url": "git@github.com:jsreport/jsreport-version-control-git.git"
   },
+  "standard": {   
+    "env": {
+      "node": true,
+      "mocha": true     
+    }
+  },
   "license": "MIT",
-  "author": "",
+  "author": "Jan Blaha",
   "devDependencies": {
     "jsreport-assets": "0.6.8",
     "jsreport-core": "1.5.1",
