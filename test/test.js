@@ -16,7 +16,8 @@ describe('git versioning', () => {
     jsreport.use(require('jsreport-version-control')())
     jsreport.use(require('jsreport-assets')())
     jsreport.use(require('jsreport-fs-store')({
-      dataDirectory: path.join(__dirname, 'tmpData')
+      dataDirectory: path.join(__dirname, 'tmpData'),
+      syncModifications: false
     }))
     jsreport.use(require('../')())
     return jsreport.init()
