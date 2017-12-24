@@ -1,6 +1,6 @@
 {
   "name": "jsreport-version-control-git",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "jsreport entities versioning implemented using local git repository",
   "main": "index.js",
   "scripts": {
