@@ -4,7 +4,7 @@
   "description": "jsreport entities versioning implemented using local git repository",
   "main": "index.js",
   "scripts": {
-    "test": "set DEBUG=jsreport&&mocha test&&standard"
+    "test": "set DEBUG=jsreport&&mocha test --timeout=5000 --exit&&standard"
   },
   "keywords": [
     "jsreport",
@@ -34,7 +34,7 @@
     "jsreport-fs-store": "1.2.4",
     "jsreport-phantom-pdf": "1.4.6",
     "jsreport-templates": "1.2.2",
-    "jsreport-version-control": "0.1.1",
+    "jsreport-version-control": "0.2.0",
     "mocha": "4.0.1",
     "rimraf": "2.6.2",
     "should": "13.1.3",
