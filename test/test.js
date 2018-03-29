@@ -9,7 +9,8 @@ describe('git versioning', () => {
 
   beforeEach(async () => {
     await rimraf(path.join(__dirname, 'tmpData'))
-    jsreport = JsReport({ storage: { provider: 'fs' }, versionControl: { name: 'git' } })
+
+    jsreport = JsReport({ store: { provider: 'fs' }, versionControl: { name: 'git' } })
     jsreport.use(require('jsreport-templates')())
     jsreport.use(require('jsreport-data')())
     jsreport.use(require('jsreport-phantom-pdf')())
@@ -23,5 +24,13 @@ describe('git versioning', () => {
     return jsreport.init()
   })
 
-  commonTests(() => jsreport, () => jsreport.documentStore.provider.init())
+  afterEach(async () => {
+    if (jsreport) {
+      await jsreport.close()
+    }
+  })
+
+  commonTests(() => jsreport, () => {
+    return jsreport.documentStore.provider.load(jsreport.documentStore.model)
+  })
 })
