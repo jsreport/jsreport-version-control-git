@@ -9,7 +9,7 @@ describe('git versioning', () => {
 
   beforeEach(async () => {
     await rimraf(path.join(__dirname, 'tmpData'))
-    jsreport = JsReport({ connectionString: { name: 'fs' }, versionControl: { name: 'git' } })
+    jsreport = JsReport({ storage: { provider: 'fs' }, versionControl: { name: 'git' } })
     jsreport.use(require('jsreport-templates')())
     jsreport.use(require('jsreport-data')())
     jsreport.use(require('jsreport-phantom-pdf')())
