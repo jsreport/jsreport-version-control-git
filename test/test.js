@@ -13,7 +13,7 @@ describe('git versioning', () => {
     jsreport = JsReport({ store: { provider: 'fs' }, versionControl: { name: 'git' } })
     jsreport.use(require('jsreport-templates')())
     jsreport.use(require('jsreport-data')())
-    jsreport.use(require('jsreport-phantom-pdf')())
+    jsreport.use(require('jsreport-chrome-pdf')())
     jsreport.use(require('jsreport-version-control')())
     jsreport.use(require('jsreport-assets')())
     jsreport.use(require('jsreport-fs-store')({
