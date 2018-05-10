@@ -2,7 +2,7 @@
 const schema = {
   type: 'object',
   properties: {
-    name: { type: 'string', enum: ['git'] }
+    provider: { type: 'string', enum: ['git'] }
   }
 }
 
