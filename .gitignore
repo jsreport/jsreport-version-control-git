@@ -64,3 +64,7 @@ tmpData
 dev.config.json
 prod.config.json
 jsreport.config.json
+
+# studio build files
+studio/main.js
+studio/main.js.map
