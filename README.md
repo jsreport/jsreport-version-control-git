@@ -14,7 +14,7 @@ npm install jsreport-version-control-git
 
 ```js
 {
-  "versionControl": { "name": "git" } 
+  "versionControl": { "provider": "git" } 
 }
 ```
 
@@ -23,6 +23,6 @@ You can apply this extension also manually to [jsreport-core](https://github.com
 
 ```js
 var jsreport = require('jsreport-core')()
-jsreport.use(require('jsreport-version-control')({ name: 'git' }))
+jsreport.use(require('jsreport-version-control')({ provider: 'git' }))
 jsreport.use(require('jsreport-version-control-git')())
 ```
