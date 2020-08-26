@@ -1,4 +1,3 @@
-
 const schema = {
   type: 'object',
   properties: {
@@ -7,10 +6,10 @@ const schema = {
 }
 
 module.exports = {
-  'name': 'version-control-git',
-  'main': 'lib/main.js',
-  'dependencies': ['templates', 'fs-store', 'version-control'],
-  'optionsSchema': {
+  name: 'version-control-git',
+  main: 'lib/main.js',
+  dependencies: ['templates', 'fs-store', 'version-control'],
+  optionsSchema: {
     versionControl: { ...schema },
     extensions: {
       'version-control': { ...schema }
