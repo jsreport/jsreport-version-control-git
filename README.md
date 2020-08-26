@@ -7,14 +7,15 @@ This creates local [git](https://git-scm.com/) repository in `data` directory an
 
 ## Installation
 
+Requires nodejs 12.
+
 ```bash
-npm install jsreport-version-control
 npm install jsreport-version-control-git
 ```
 
 ```js
 {
-  "versionControl": { "provider": "git" } 
+  "extensions": { "versionControl": { "provider": "git" } }
 }
 ```
 

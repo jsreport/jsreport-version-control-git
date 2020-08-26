@@ -11,7 +11,7 @@
     "pdf"
   ],
   "engines": {
-    "node": ">=8.9"
+    "node": ">=12"
   },
   "homepage": "https://github.com/jsreport/jsreport-version-control-git",
   "repository": {
