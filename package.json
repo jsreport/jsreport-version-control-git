@@ -42,6 +42,8 @@
     "standard": "14.3.4"
   },
   "dependencies": {
+    "fs-extra": "10.0.0",
+    "jsreport-studio-dev": "1.6.0",
     "nodegit": "0.27.0"
   },
   "files": [

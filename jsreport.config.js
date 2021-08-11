@@ -1,7 +1,8 @@
 const schema = {
   type: 'object',
   properties: {
-    provider: { type: 'string', enum: ['git'] }
+    provider: { type: 'string', enum: ['git'] },
+    remote: { type: 'string' }
   }
 }
 
