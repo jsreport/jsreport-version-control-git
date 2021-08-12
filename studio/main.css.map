@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///VersionControlGit.scss"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,kBAAkB;EAClB,aAAa;EACb,aAAa;EACb,YAAY;AACd,C","file":"main.css","sourcesContent":[".listContainer {\n  overflow: auto;\n  position: relative;\n  padding: 1rem;\n  min-height: 0;\n  height: auto;\n}"],"sourceRoot":""}
