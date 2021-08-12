@@ -35,6 +35,7 @@
     "jsreport-fs-store": "2.9.0",
     "jsreport-templates": "2.4.0",
     "jsreport-version-control": "1.5.1",
+    "jsreport-studio-dev": "1.6.0",
     "mocha": "8.1.1",
     "puppeteer": "5.2.1",
     "rimraf": "3.0.2",
@@ -43,7 +44,6 @@
   },
   "dependencies": {
     "fs-extra": "10.0.0",
-    "jsreport-studio-dev": "1.6.0",
     "nodegit": "0.27.0"
   },
   "files": [
