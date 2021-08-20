@@ -5,3 +5,29 @@
   min-height: 0;
   height: auto;
 }
+
+.listContainer > .table {
+  margin-bottom: 1rem;
+}
+
+.runCaret {
+  font-family: FontAwesome;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.runCaret:hover {
+  color: $formPrimary-color;
+}
+
+.runCaret:after {
+  content: "\f0d7 "
+}
+
+.runPopup {
+  background-color: $toolbar-popup-backgroundColor;
+  top: 2.4rem;
+  position: absolute;
+  padding: 0.5rem;
+  z-index: 200;
+}

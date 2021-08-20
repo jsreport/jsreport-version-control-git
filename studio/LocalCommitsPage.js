@@ -6,7 +6,7 @@ import style from './VersionControlGit.scss'
 export default class LocalCommitsPage extends Component {
   constructor (props) {
     super(props)
-    this.state = { inExecution: false, commits: [], error: null }
+    this.state = { inExecution: false, commits: [], error: null, ready: false }
   }
 
   onTabActive () {
@@ -22,10 +22,10 @@ export default class LocalCommitsPage extends Component {
 
     try {
       const res = await Studio.api.get('/api/version-control-git/local-commits')
-      this.setState({ commits: res })
+      this.setState({ commits: res, ready: true })
     } catch (e) {
       // eslint-disable-next-line no-undef
-      alert(e)
+      // alert(e)
     } finally {
       this.fetchRequested = false
     }
@@ -39,13 +39,19 @@ export default class LocalCommitsPage extends Component {
     this.setState({ inExecution: true })
 
     try {
-      await Studio.api.post('/api/version-control-git/push')
-      this.setState({ error: null, inExecution: false })
-      await this.load()
+      const res = await Studio.api.get('/api/version-control-git/status')
+      if (res.length === 0) {
+        this.setState({ ready: false })
+        await Studio.api.post('/api/version-control-git/push')
+        this.setState({ error: null, inExecution: false })
+        await this.load()
+      } else {
+        Studio.openTab({ key: 'RemotePullPage', editorComponentKey: 'remotePull', title: 'New Changes from Remote' })
+        this.setState({ error: null, inExecution: false })
+      }
     } catch (e) {
-      this.setState({ inExecution: false })
+      this.setState({ inExecution: false, ready: false })
       // eslint-disable-next-line no-undef
-      alert(e)
     }
   }
 
@@ -60,25 +66,27 @@ export default class LocalCommitsPage extends Component {
           <i className='fa fa-history' /> Unpushed Commits
           <button className='button confirmation' onClick={() => this.history()}>Commits history</button>
         </h2>
-        <div className={style.listContainer + ' block-item'}>
-          <table className='table'>
-            <thead>
-              <tr>
-                <th>date</th>
-                <th>message</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.commits.map((h) => (
-                <tr key={h._id}>
-                  <td>{h.date.toLocaleString()}</td>
-                  <td>{h.message}</td>
+        { this.state.ready && (this.state.commits.length > 0
+          ? <div className={style.listContainer + ' block-item'}>
+            <table className={style.table + ' table'}>
+              <thead>
+                <tr>
+                  <th>date</th>
+                  <th>message</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          <button className='button confirmation' onClick={() => this.push()}>Continue Push</button>
-        </div>
+              </thead>
+              <tbody>
+                {this.state.commits.map((h) => (
+                  <tr key={h._id}>
+                    <td>{h.date.toLocaleString()}</td>
+                    <td>{h.message}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button className={style.pushButton + ' button confirmation'} onClick={() => this.push()}>Continue Push</button>
+          </div>
+          : <p>No commits to push</p>)}
       </div>
     )
   }
