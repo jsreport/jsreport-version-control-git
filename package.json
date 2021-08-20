@@ -1,5 +1,5 @@
 {
-  "name": "jsreport-version-control-git",
+  "name": "jsreport-version-control-remote-git",
   "version": "1.1.0",
   "description": "jsreport entities versioning implemented using local git repository",
   "main": "index.js",
@@ -16,10 +16,10 @@
   "engines": {
     "node": ">=12"
   },
-  "homepage": "https://github.com/jsreport/jsreport-version-control-git",
+  "homepage": "https://github.com/mdeforest/jsreport-version-control-git",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jsreport/jsreport-version-control-git.git"
+    "url": "git@github.com:mdeforest/jsreport-version-control-git.git"
   },
   "standard": {
     "env": {
