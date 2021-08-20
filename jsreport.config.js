@@ -2,7 +2,8 @@ const schema = {
   type: 'object',
   properties: {
     provider: { type: 'string', enum: ['git'] },
-    remote: { type: 'string' }
+    remote: { type: 'string' },
+    allowPush: { type: 'boolean', default: true }
   }
 }
 
