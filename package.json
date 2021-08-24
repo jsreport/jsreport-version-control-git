@@ -1,6 +1,6 @@
 {
   "name": "jsreport-version-control-remote-git",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "jsreport entities versioning implemented using local git repository",
   "main": "index.js",
   "scripts": {
