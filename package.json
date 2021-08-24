@@ -1,6 +1,6 @@
 {
   "name": "jsreport-version-control-remote-git",
-  "version": "2.0.0",
+  "version": "2.3.0",
   "description": "jsreport entities versioning implemented using local git repository",
   "main": "index.js",
   "scripts": {
@@ -54,6 +54,10 @@
   "files": [
     "lib",
     "index.js",
-    "jsreport.config.js"
+    "jsreport.config.js",
+    "studio/main.js",
+    "studio/main.js.map",
+    "studio/main.css",
+    "studio/main.css.map"
   ]
 }
