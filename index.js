@@ -1,9 +1,10 @@
-var main = require('./lib/main.js')
+var main = require('./main.js')
 var config = require('./jsreport.config.js')
 
 module.exports = function (options) {
-  config.options = options
-  config.main = main
+  config = Object.assign({}, config)
   config.directory = __dirname
+  config.options = Object.assign({}, options)
+  config.main = main
   return config
 }

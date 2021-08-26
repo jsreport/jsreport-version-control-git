@@ -2,8 +2,14 @@ const schema = {
   type: 'object',
   properties: {
     provider: { type: 'string', enum: ['git'] },
-    remote: { type: 'string' },
-    allowPush: { type: 'boolean', default: true }
+    remote: {
+      type: 'object',
+      properties: {
+        url: { type: 'string' },
+        allowPush: { type: 'boolean', default: true },
+        branch: { type: 'string', default: 'master' }
+      }
+    }
   }
 }
 
