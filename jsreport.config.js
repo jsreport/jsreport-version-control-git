@@ -4,6 +4,7 @@ const schema = {
     provider: { type: 'string', enum: ['git'] },
     remote: {
       type: 'object',
+      default: {},
       properties: {
         url: { type: 'string' },
         allowPush: { type: 'boolean', default: true },
