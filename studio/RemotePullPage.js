@@ -86,21 +86,22 @@ export default class RemotePullPage extends Component {
         <h2>
           <i className='fa fa-history' /> Changes from Remote
         </h2>
-        { this.state.ready && (this.state.diff.length > 0
-          ? <div className={style.listContainer + ' block-item'}>
-            <table className={style.table + ' table'}>
-              <thead>
-                <tr>
-                  <th style={{ width: '20px' }}>operation</th>
-                  <th>path</th>
-                  <th>entity set</th>
-                </tr>
-              </thead>
-              {this.state.diff.map((c) => this.renderChange(c))}
-            </table>
-            <button className={style.pushButton + ' button confirmation'} onClick={() => this.pull()}>Continue Pull</button>
-          </div>
-          : <p>No changes to pull</p>)}
+        {this.state.ready && (this.state.diff.length > 0
+          ? (
+            <div className={style.listContainer + ' block-item'}>
+              <table className={style.table + ' table'}>
+                <thead>
+                  <tr>
+                    <th style={{ width: '20px' }}>operation</th>
+                    <th>path</th>
+                    <th>entity set</th>
+                  </tr>
+                </thead>
+                {this.state.diff.map((c) => this.renderChange(c))}
+              </table>
+              <button className={style.pushButton + ' button confirmation'} onClick={() => this.pull()}>Continue Pull</button>
+            </div>
+          ) : <p>No changes to pull</p>)}
       </div>
     )
   }

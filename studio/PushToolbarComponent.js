@@ -27,22 +27,25 @@ const PushToolbar = () => {
     Studio.openTab({ key: 'RemotePullPage', editorComponentKey: 'remotePull', title: 'New Changes from Remote' })
   }
 
-  return <div
-    title="Push all un-pushed commits"
-    className="toolbar-button"
-    onClick={(e) => openLocalCommits(e)}>
-    <i className="fa fa-git-alt"></i>
-    <span>Remote Git</span>
-    <span className={style.runCaret} onClick={(e) => { e.stopPropagation(); setExpandedToolbar(!expandedToolbar) }} />
-    <div className={style.runPopup} style={{ display: expandedToolbar ? 'block' : 'none' }}>
-      <div title='Push' className='toolbar-button' onClick={(e) => openLocalCommits(e)}>
-        <i className='fa fa-upload' /><span>Push Changes</span>
-      </div>
-      <div title='Pull' className='toolbar-button' onClick={(e) => openPull(e)}>
-        <i className='fa fa-download' /><span>Pull Changes</span>
+  return (
+    <div
+      title='Push all un-pushed commits'
+      className='toolbar-button'
+      onClick={(e) => openLocalCommits(e)}
+    >
+      <i className='fa fa-git-alt' />
+      <span>Remote Git</span>
+      <span className={style.runCaret} onClick={(e) => { e.stopPropagation(); setExpandedToolbar(!expandedToolbar) }} />
+      <div className={style.runPopup} style={{ display: expandedToolbar ? 'block' : 'none' }}>
+        <div title='Push' className='toolbar-button' onClick={(e) => openLocalCommits(e)}>
+          <i className='fa fa-upload' /><span>Push Changes</span>
+        </div>
+        <div title='Pull' className='toolbar-button' onClick={(e) => openPull(e)}>
+          <i className='fa fa-download' /><span>Pull Changes</span>
+        </div>
       </div>
     </div>
-  </div>
+  )
 }
 
 export default PushToolbar

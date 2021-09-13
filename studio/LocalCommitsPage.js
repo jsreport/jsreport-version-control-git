@@ -66,27 +66,28 @@ export default class LocalCommitsPage extends Component {
           <i className='fa fa-history' /> Unpushed Commits
           <button className='button confirmation' onClick={() => this.history()}>Commits history</button>
         </h2>
-        { this.state.ready && (this.state.commits.length > 0
-          ? <div className={style.listContainer + ' block-item'}>
-            <table className={style.table + ' table'}>
-              <thead>
-                <tr>
-                  <th>date</th>
-                  <th>message</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.commits.map((h) => (
-                  <tr key={h._id}>
-                    <td>{h.date.toLocaleString()}</td>
-                    <td>{h.message}</td>
+        {this.state.ready && (this.state.commits.length > 0
+          ? (
+            <div className={style.listContainer + ' block-item'}>
+              <table className={style.table + ' table'}>
+                <thead>
+                  <tr>
+                    <th>date</th>
+                    <th>message</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-            <button className={style.pushButton + ' button confirmation'} onClick={() => this.push()}>Continue Push</button>
-          </div>
-          : <p>No commits to push</p>)}
+                </thead>
+                <tbody>
+                  {this.state.commits.map((h) => (
+                    <tr key={h._id}>
+                      <td>{h.date.toLocaleString()}</td>
+                      <td>{h.message}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <button className={style.pushButton + ' button confirmation'} onClick={() => this.push()}>Continue Push</button>
+            </div>
+          ) : <p>No commits to push</p>)}
       </div>
     )
   }
