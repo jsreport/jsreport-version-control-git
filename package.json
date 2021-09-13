@@ -4,7 +4,7 @@
   "description": "jsreport entities versioning implemented using local git repository",
   "main": "index.js",
   "scripts": {
-    "test": "set DEBUG=jsreport && ( cd test/__fixtures__; git-http-mock-server start ) && mocha test --timeout=5000 --exit || true && ( cd test/__fixtures__; git-http-mock-server stop ) && standard",
+    "test": "set DEBUG=jsreport && ( cd test/__fixtures__; git-http-mock-server start ) && mocha test --timeout=5000000 --exit || true && ( cd test/__fixtures__; git-http-mock-server stop ) && standard",
     "start": "jsreport-studio-start --httpPort 5488",
     "build": "jsreport-studio-build",
     "prepublish": "in-publish && jsreport-studio-build || not-in-publish"
@@ -30,8 +30,8 @@
   "license": "MIT",
   "author": "Jan Blaha",
   "devDependencies": {
+    "assert": "2.0.0",
     "eslint": "7.7.0",
-    "git-http-mock-server": "2.0.0",
     "in-publish": "2.0.1",
     "jsreport-assets": "1.7.0",
     "jsreport-chrome-pdf": "1.9.0",
@@ -46,10 +46,12 @@
     "rimraf": "3.0.2",
     "segfault-handler": "1.3.0",
     "should": "13.2.3",
+    "sinon": "11.1.2",
     "standard": "14.3.4"
   },
   "dependencies": {
     "fs-extra": "10.0.0",
+    "git-http-mock-server": "2.0.0",
     "nodegit": "0.27.0"
   },
   "files": [
