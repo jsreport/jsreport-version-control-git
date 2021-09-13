@@ -1,7 +1,16 @@
 const schema = {
   type: 'object',
   properties: {
-    provider: { type: 'string', enum: ['git'] }
+    provider: { type: 'string', enum: ['git'] },
+    remote: {
+      type: 'object',
+      default: {},
+      properties: {
+        url: { type: 'string' },
+        allowPush: { type: 'boolean', default: true },
+        branch: { type: 'string', default: 'master' }
+      }
+    }
   }
 }
 

@@ -1,0 +1,33 @@
+.x-version-control-git-VersionControlGit-listContainer {
+  overflow: auto;
+  position: relative;
+  padding: 1rem;
+  min-height: 0;
+  height: auto;
+}
+
+.x-version-control-git-VersionControlGit-listContainer > .x-version-control-git-VersionControlGit-table {
+  margin-bottom: 1rem;
+}
+
+.x-version-control-git-VersionControlGit-runCaret {
+  font-family: FontAwesome;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.x-version-control-git-VersionControlGit-runCaret:hover {
+  color: $formPrimary-color;
+}
+
+.x-version-control-git-VersionControlGit-runCaret:after {
+  content: "\f0d7 "
+}
+
+.x-version-control-git-VersionControlGit-runPopup {
+  background-color: $toolbar-popup-backgroundColor;
+  top: 2.4rem;
+  position: absolute;
+  padding: 0.5rem;
+  z-index: 200;
+}
